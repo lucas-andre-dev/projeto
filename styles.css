@@ -1,0 +1,164 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+/* Tema Padrão Escuro*/
+:root {
+  --text-color: white;
+  --bg-url: url(./assets/bg-mobile.jpg);
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgb(255, 255, 255, 0.1);
+
+  --stroke-color-hover: rgba(255, 255, 255, 1);
+  --surface-color-hover: rgba(255, 255, 255, 0.05);
+  --highlight-color: rgba(255, 255, 255, 0.2);
+
+  --toggle-handle-bg: url(./assets/moon-stars.svg);
+}
+/*Tema Claro*/
+.light {
+  --text-color: black;
+  --bg-url: url(./assets/bg-mobile-light.jpg);
+  /**STROKE = BORDA
+    SURFACE= BACKGROUND*/
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.05);
+
+  --stroke-color-hover: rgba(0, 0, 0, 1);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+
+  --highlight-color: rgba(0, 0, 0, 0.1);
+
+  --toggle-handle-bg: url(./assets/sun.svg);
+
+  --switch-position: 0;
+}
+/*Corpo do html*/
+body {
+  /* background-image: url(./assets/bg-mobile.jpg);
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  Podemos trocar a repetição acima, por uma linha. Como abaixo  |
+                      V
+                      V
+  */
+  background: var(--bg-url) no-repeat top center/cover;
+}
+/*Seletor de todas as propriedades dentrodo corpo*/
+body * {
+  color: var(--text-color);
+  font-family: "Inter", sans-serif;
+}
+/*DIV Pai*/
+#container {
+  width: 360px;
+  margin: 56px auto;
+}
+/*Profile*/
+#profile {
+  text-align: center;
+  padding: 24px;
+  /* border: 1px solid red;*/
+}
+#profile img {
+  border-radius: 50%;
+  border: 2px solid var(--stroke-color);
+  width: 112px;
+}
+#profile p {
+  line-height: 24px;
+  font-weight: 500;
+  padding-top: 8px;
+}
+
+/*Switch*/
+#switch {
+  position: relative;
+  display: flex;
+  width: 64px;
+  margin: 4px auto;
+}
+#switch button {
+  background: white var(--toggle-handle-bg) no-repeat center;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  border: none;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
+  right: var(--switch-position);
+  cursor: pointer;
+}
+#switch span {
+  width: 64px;
+  height: 24px;
+  border-radius: 9999px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  display: block;
+}
+/*div de Links*/
+ul {
+  /* border: 1px solid red;*/
+  padding: 24px;
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+}
+ul li {
+  list-style: none;
+}
+ul li a {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  padding: 16px 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  border-radius: 8px;
+  font-weight: 500;
+  backdrop-filter: 4px;
+  -webkit-backdrop-filter: blur(4px);
+  transition: background 0.2s;
+}
+ul li a:hover {
+  background: var(--surface-color-hover);
+  border: 1.5px solid var(--stroke-color-hover);
+}
+/*div com as redes sociais*/
+#social-links {
+  padding: 24px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+#social-links a {
+  display: flex;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+#social-links a ion-icon {
+  height: 24px;
+  width: 24px;
+}
+
+#social-links a:hover {
+  background-color: var(--highlight-color);
+}
+/*Footer*/
+#footer {
+  padding: 24px;
+  text-align: center;
+}
+
+#footer p {
+  font-weight: 400;
+  font-size: 14px;
+}
