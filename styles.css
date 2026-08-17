@@ -92,7 +92,6 @@ body * {
   z-index: 1;
   top: 50%;
   transform: translateY(-50%);
-  left: 0;
   cursor: pointer;
   animation: slide-out 0.4s forwards;
 }
